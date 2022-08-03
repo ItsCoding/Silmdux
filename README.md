@@ -83,7 +83,7 @@ type SignalSubscriber<T> = {
 };
 ```
 
-###ToDos:
+### ToDos:
 - Write tests
 - Get Typing to work propperly
 - Be able to import middlewares/reducer
