@@ -1,0 +1,22 @@
+{
+  "name": "silmdux",
+  "version": "1.0.0",
+  "description": "A Slimer alternative to Redux",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsCoding/Silmdux.git"
+  },
+  "author": "Alexander Quadt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItsCoding/Silmdux/issues"
+  },
+  "homepage": "https://github.com/ItsCoding/Silmdux#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
