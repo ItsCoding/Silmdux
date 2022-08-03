@@ -8,7 +8,7 @@ npm i --save slimdux
 ### Usage for React
 #### useStore(key:string, initialValue: T): [T | undefined, (change: T) => void]
 Using the statemanager in React is as simple as using the normal `useState`. 
-```
+```TypeScript
 import React from 'react';
 import { useStore } from 'Slimdux';
 
@@ -28,12 +28,12 @@ export default App;
 ### Usage for TypeScript
 #### getInstace(): Slimdux
 To get the statemanager we need to call for the instance instead of creating a new statemanager. Its simple as
-```
+```TypeScript
 const instance = Slimdux.getInstance();
 ```
 #### on(key:string, handler: SignalHandler): string
 You can listen to change events in the statemanager with the `on` function. This will return your subscriberID. You will need this for unsubscribing.
-```
+```TypeScript
 const instance = Slimdux.getInstance();
 
 let subscriberID = instance.on("myStore",(event) => {
@@ -42,7 +42,7 @@ let subscriberID = instance.on("myStore",(event) => {
 ```
 #### off(subscriberID:string): void
 Off lets you unsubscribe from an Event
-```
+```TypeScript
 const instance = Slimdux.getInstance();
 
 let subscriberID = instance.on("myStore",(event) => {
@@ -52,7 +52,7 @@ let subscriberID = instance.on("myStore",(event) => {
 ```
 #### dispatch(key:string, change: T): void
 With dispatch you can trigger an state change from anywhere!
-```
+```TypeScript
 const instance = Slimdux.getInstance();
 
 let subscriberID = instance.on("myStore",(event) => {
@@ -63,7 +63,7 @@ instance.dispatch("myStore","Hello World");
 ```
 #### get(key:string, change: T): void
 Lets you query an state manually
-```
+```TypeScript
 const instance = Slimdux.getInstance();
 
 let something = instance.get("myStore");
@@ -71,11 +71,11 @@ let something = instance.get("myStore");
 
 ### Types
 #### SignalHandler
-```
+```TypeScript
 type SignalHandler<T> = (change: T | React.SetStateAction<T>) => void | Promise<void>;
 ```
 #### SignalSubscriber
-```
+```TypeScript
 type SignalSubscriber<T> = {
   subscriberID: string;
   handler: SignalHandler<T>;
