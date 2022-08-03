@@ -1,9 +1,9 @@
 import { useState, useCallback, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-type SignalHandler<T> = (change: T | React.SetStateAction<T>) => void | Promise<void>;
+export type SignalHandler<T> = (change: T | React.SetStateAction<T>) => void | Promise<void>;
 
-type SignalSubscriber<T> = {
+export type SignalSubscriber<T> = {
   subscriberID: string;
   handler: SignalHandler<T>;
   key: string;
@@ -52,7 +52,7 @@ export class Slimdux {
   }
 }
 
-export const useStore = <T>(key: string, initialValue: T): [T | undefined, any] => {
+export const useStore = <T>(key: string, initialValue: T): [T | undefined, (change: T) => void] => {
   const instance = Slimdux.getInstance();
   const [state, setState] = useState<T>(instance.get(key) ?? initialValue);
   useEffect(() => {
